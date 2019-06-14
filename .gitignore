@@ -245,7 +245,6 @@ modules.xml
 
 # Log file
 *.log
-ui-lovelace.yaml
 # BlueJ files
 *.ctxt
 
@@ -540,6 +539,7 @@ gradle-app.setting
 
 # Customs
 .HA_VERSION
+.ui-lovelace.yaml
 .esphome/
 .pioenvs/
 .piolibdeps/

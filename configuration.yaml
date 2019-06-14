@@ -26,8 +26,10 @@ conversation:
 map:
 
 logger:
-  default: info
-  
+  default: error
+  logs:
+    homeassistant.custom_components.emulated_roku: info
+
 mqtt:
     # discovery: clean
     discovery: true

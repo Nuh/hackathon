@@ -1,0 +1,21 @@
+script:
+  salka1:
+    sequence:
+      - wait_template: "{{ is_state('salka1.door', 'on') }}"
+        timeout: '00:05:00'
+        continue_on_timeout: 'false'
+      - wait_template: "{{ states.salka1.motion == 'on' }}"
+        timeout: '00:02:00'
+        continue_on_timeout: 'false'
+      - service: switch.turn_off
+        entity_id: input_boolean.salka_1_status
+
+automation:
+  - alias: salka1_meeting_start
+    trigger:
+      - platform: state
+        entity_id: input_boolean.salka_1_status
+        to: 'off'
+    action:
+      - service: script.turn_on
+        entity_id: script.salka1

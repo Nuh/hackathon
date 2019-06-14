@@ -76,9 +76,9 @@ automation:
       data_template:
         title: "{{ trigger.event.data.title }}"
         message: >
-          Post z: {{ trigger.event.data.timestamp }} <br/>
-          {{ trigger.event.data.message }} </br>
-          <strong>Smacznego życzy The Second Salamander</strong>
+          Post z: {{ trigger.event.data.timestamp }} /n
+          {{ trigger.event.data.message }} /n/n
+          Smacznego życzy The Second Salamander
         
   - alias: "Send AHE menu"
     initial_state: 'on'

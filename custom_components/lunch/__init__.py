@@ -8,7 +8,7 @@ import requests
 DOMAIN = "lunch"
 
 def normalize_name(name):
-    return re.sub('([a-z0-9])([A-Z])', r'\1_\2', re.sub('(.)([A-Z][a-z]+)', r'\1_\2', name.strip())).lower()
+    return re.sub('([a-z0-9])([A-Z])', r'\1_\2', re.sub('(.)([A-Z][a-z]+)', r'\1_\2', str(name))).lower()
 
 def get_as_base64(url):
     return base64.b64encode(requests.get(url).content)

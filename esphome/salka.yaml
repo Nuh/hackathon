@@ -1,0 +1,16 @@
+esphome:
+  name: salka
+  platform: ESP8266
+  board: d1_mini
+
+wifi:
+  ssid: "salamanders"
+  password: "securnesecurne"
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:

@@ -1,0 +1,36 @@
+sensor:
+  # Weather prediction
+  - platform: yr
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+homeassistant:
+  unit_system: metric
+  time_zone: Europe/Warsaw
+  temperature_unit: C
+  packages: !include_dir_named packages
+
+lovelace:
+  mode: yaml
+
+config:
+hassio:
+
+sun:
+conversation:
+map:
+
+logger:
+  default: info
+  
+mqtt:
+    # discovery: clean
+    discovery: true
+    discovery_prefix: homeassistant
+    broker: 127.0.0.1
+    port: 1883
+    client_id: homeassistant
+    username: iot
+    password: securne

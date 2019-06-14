@@ -1,0 +1,51 @@
+
+title: My Awesome Home
+panel: true
+resources:
+  # - type: css
+  #   url: /local/styles.css?v=0.05
+  - url: /customcards/github/nervetattoo/banner-card.js?track=true
+    type: module
+  - url:  /local/custom_ui/battery-entity.js?v=0.1
+    type: module
+  - url: /local/custom_ui/bignumber-card.js
+    type: js
+  - url: /local/custom_ui/card-tools.js?track=true
+    type: js
+  - url: /local/custom_ui/gauge-card.js
+    type: js
+  - url: /local/custom_ui/layout-card.js
+    type: js
+  - url: /local/custom_ui/light-entity-row.js
+    type: js
+  - url: /local/custom_ui/mini-graph-card-bundle.js
+    type: module
+  - url: /local/custom_ui/mini-media-player-bundle.js
+    type: module
+  - url: /local/custom_ui/popup-card.js
+    type: js
+  - url: /local/custom_ui/secondaryinfo-entity-row.js
+    type: js
+  - url: /local/custom_ui/tracker-card.js
+    type: js
+  - url: /local/custom_ui/vertical-stack-in-card.js
+    type: js
+  - url: /local/custom_ui/button-card.js
+    type: module
+  - url: /local/custom_ui/graph-card.js?v=0.1
+    type: js
+## CUSTOM LOVELACE
+  - url: /local/custom-lovelace/alarm_control_panel-card/alarm_control_panel-card.js
+    type: js
+  - url: /local/custom-lovelace/plan-coordinates/plan-coordinates.js
+    type: js
+  - url: /local/custom-lovelace/monster-card/monster-card.js
+    type: js
+views:
+  - title: MAIN
+    cards:
+     - type: picture
+       image: /local/img/tu_kuba.jpg
+       # tap_action:
+       #   action: navigate
+       #   navigation_path: /lovelace/home

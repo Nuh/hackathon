@@ -1,0 +1,37 @@
+esphome:
+  name: obiady
+  platform: ESP8266
+  board: d1_mini
+
+wifi:
+  ssid: "salamanders"
+  password: "securnesecurne"
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: D2
+      mode: INPUT_PULLUP
+      inverted: TRUE
+    name: kanapka_1
+  - platform: gpio
+    pin:
+      number: D3
+      mode: INPUT_PULLUP
+      inverted: TRUE
+    name: kanapka_2
+  - platform: gpio
+    pin:
+      number: D4
+      mode: INPUT_PULLUP
+      inverted: TRUE
+    name: kanapka_3

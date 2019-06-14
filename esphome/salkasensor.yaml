@@ -1,0 +1,64 @@
+esphome:
+  name: salkasensor
+  platform: ESP8266
+  board: d1_mini
+
+wifi:
+  ssid: "salamanders"
+  password: "securnesecurne"
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+uart:
+  rx_pin: D1
+  tx_pin: D2
+  baud_rate: 9600
+
+i2c:
+  sda: D3
+  scl: D4
+  scan: True
+  
+light:
+  - platform: rgb
+    name: "SalkaStatus"
+    red: output_component1
+    green: output_component2
+    blue: output_component3
+
+output:
+  - platform: esp8266_pwm
+    id: output_component1
+    pin: D5
+  - platform: esp8266_pwm
+    id: output_component2
+    pin: D6
+  - platform: esp8266_pwm
+    id: output_component3
+    pin: D7
+    
+
+sensor:
+  - platform: mhz19
+    co2:
+      name: "MH-Z19 CO2 Value"
+    temperature:
+      name: "MH-Z19 Temperature"
+    update_interval: 60s
+    
+  - platform: bme280
+    temperature:
+      name: "BME280 Temperature"
+      oversampling: 16x
+    pressure:
+      name: "BME280 Pressure"
+    humidity:
+      name: "BME280 Humidity"
+    address: 0x76
+    update_interval: 60s

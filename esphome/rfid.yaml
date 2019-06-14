@@ -1,0 +1,38 @@
+esphome:
+  name: "kanapka_ble"
+  platform: ESP32
+  board: nodemcu-32s
+
+wifi:
+  ssid: "salamanders"
+  password: "securnesecurne"
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+# Example configuration entry
+esp32_ble_tracker:
+  scan_interval: 300s
+
+sensor:
+  - platform: ble_rssi
+    mac_address: 4C:49:E3:56:A0:FB
+    name: "ble_kanapka_1"
+binary_sensor:
+  - platform: ble_presence
+    mac_address: 4C:49:E3:56:A0:FB
+    name: "ble_kanapka_1"
+    
+sensor:
+  - platform: ble_rssi
+    mac_address: B0:EB:57:81:52:15
+    name: "ble_kanapka_2"
+binary_sensor:
+  - platform: ble_presence
+    mac_address: B0:EB:57:81:52:15
+    name: "ble_kanapka_2"

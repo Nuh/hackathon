@@ -1,0 +1,43 @@
+automation:
+  - alias: "Kanapka Szop"
+    initial_state: 'on'
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.kanapka_1
+        to: 'on'
+    action:
+      - service: notify.email_kanapka
+        data:
+          title: 'Szop na miejscu'
+          message: "Szop znajduje się przed biurem"
+          data:
+            images:
+              - /config/www/img/szop.jpg
+  - alias: "Kanapka Kuba"
+    initial_state: 'on'
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.kanapka_2
+        to: 'on'
+    action:
+      - service: notify.email_kanapka
+        data:
+          title: 'Tu Kuba'
+          message: "TuKuba znajduje się przed biurem"
+          data:
+            images:
+              - /config/www/img/kuba.jpg
+  - alias: "Kanapka Musztarda"
+    initial_state: 'on'
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.kanapka_3
+        to: 'on'
+    action:
+      - service: notify.email_kanapka
+        data:
+          title: 'Musztarda'
+          message: "Musztarda znajduje się w biurze"
+          data:
+            images:
+              - /config/www/img/musztarda.jpg

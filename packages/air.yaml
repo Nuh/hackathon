@@ -1,0 +1,29 @@
+sensor:
+  - platform: rest
+    name: GiosAir
+    #curl -X GET     --header 'Accept: application/json'  http://api.gios.gov.pl/pjp-api/rest/station/sensors/295
+    resource:  http://api.gios.gov.pl/pjp-api/rest/data/getData/2069
+    value_template: "{{ value_json['values'][1]['value'] }}"
+    icon_template: mdi:jquery
+    unit_of_measurement: "μg/m3"
+input_number:
+  air_red:
+    name: Slider
+    initial: 800
+    min: 0
+    max: 1000
+    step: 100
+automation:
+  - alias: "Status Powietrza"
+    initial_state: True
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.giosair
+        above: 40
+        for:
+          minutes: 15
+    action:
+      - service: notify.email_kanapka
+        data:
+          title: 'Jakość Powietrza'
+          message: "Uważaj na siebie powietrze nie jest za czyste {{states.sensor.giosair.state}} PM"

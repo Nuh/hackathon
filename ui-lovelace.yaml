@@ -73,3 +73,11 @@ views:
             name: Alarm Panel
           - device_tracker.demo_paulus
         entity: input_boolean.salka_1_status
+  - title: Devices Debug
+    cards:
+      - type: custom:tracker-card
+        title: 'Aktualizacje'
+        trackers:
+          - sensor.custom_card_tracker
+          - sensor.custom_python_script_tracker
+          - sensor.custom_component_tracker

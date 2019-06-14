@@ -539,6 +539,10 @@ gradle-app.setting
 
 # Customs
 .HA_VERSION
+ip_bans.yaml
+secrets.yaml
+known_devices.yaml
+ui-lovelace.yaml
 .ui-lovelace.yaml
 .esphome/
 .pioenvs/

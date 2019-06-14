@@ -6,7 +6,7 @@ automation:
         entity_id: sensor.button_reservation
         to: 'single'
     action:
-      - service: notify.email
+      - service: notify.email_send
         data:
           title: 'Rezerwacja salki 1.11'
           message: "Salka zarezerwowana na najbliższe 15 minut"
@@ -18,7 +18,7 @@ automation:
         entity_id: sensor.button_reservation
         to: 'double'
     action:
-      - service: notify.email
+      - service: notify.email_send
         data:
           title: 'Rezerwacja salki 1.11'
           message: "Salka zarezerwowana na najbliższe 30 minut"
@@ -30,7 +30,7 @@ automation:
         entity_id: sensor.button_reservation
         to: 'long'
     action:
-      - service: notify.email
+      - service: notify.email_send
         data:
           title: 'Rezerwacja salki 1.11'
           message: "Salka zarezerwowana na najbliższe 60 minut"

@@ -67,8 +67,7 @@ automation:
       value_template: '{{ sensor.salka1_air >= input_number.air_red}}'
     action:
       - service: light.turn_on
-        data:
+        entity_id: light.salkastatus
+        data_template:
+          rgb_color: -'{% if if states.sensor.salka1_air | float < states.input_number.air_red |float -%}250,250,210{% else %}245,245,245{%- endif %}'
           brightness: 255
-          rgb_color: ['{%- if states.sensor.salka1_air | float < states.input_number.air_red |float %}255,0,0{% else %}0,255,0{% endif %}']
-          entity_id:
-            - light.salkastatus

@@ -1,5 +1,5 @@
 automation:
-  - alias: "15 min"
+  - alias: "salka1_15min"
     initial_state: 'on'
     trigger:
       - platform: state
@@ -12,7 +12,7 @@ automation:
           message: "Salka zarezerwowana na najbliższe 15 minut"
       - service: switch.turn_on
         entity_id: input_boolean.salka_1_status
-  - alias: "30 min"
+  - alias: "salka1_30min"
     initial_state: 'on'
     trigger:
       - platform: state
@@ -25,7 +25,7 @@ automation:
           message: "Salka zarezerwowana na najbliższe 30 minut"
       - service: switch.turn_on
         entity_id: input_boolean.salka_1_status
-  - alias: "60 min"
+  - alias: "salka1_60min"
     initial_state: 'on'
     trigger:
       - platform: state

@@ -19,8 +19,9 @@ async def async_setup(hass, config):
 
     @callback
     def menu_received(event):
-        LOGGER.info("Menu received: %s", event.data)
-        # hass.states.async_set(event.attributes.id, event.attributes)
+        if event and event.data and event.data.id:
+            LOGGER.info("Menu received: %s", event.data.id)
+            hass.states.async_set(event.data.id, any(event.data), event.data, True)
 
     hass.bus.async_listen(DOMAIN, menu_received)
 

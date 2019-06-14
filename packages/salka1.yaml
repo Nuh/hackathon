@@ -26,9 +26,10 @@ automation:
     trigger:
       - platform: time
         at: '18:00:00'
-    condition: state
-      entity_id: binary_sensor.salka1_window
-      state: 'open'
+    condition:
+      - condition: state
+        entity_id: binary_sensor.salka1_window
+        state: 'open'
     action:
       - service: notify.email_send
         data:

@@ -6,11 +6,10 @@ DOMAIN = "lunch"
 
 async def async_setup(hass, config):
    
-    # Service to publish a message on MQTT.
     @callback
     def get_menu(call):
-    	fbUrl = data.get('url')
-    	name = data.get('name')
+    	fbUrl = call.data.get('url')
+    	name = call.data.get('name')
 
     	restaurant = pq(url=fbUrl)
     	lastPost = restaurant("div").filter(".userContentWrapper")[0]

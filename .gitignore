@@ -1,4 +1,3 @@
-
 # Created by https://www.gitignore.io/api/m2e,vim,java,grunt,emacs,sonar,linux,nanoc,macos,maven,gradle,yeoman,python,windows,eclipse,intellij,sonarqube,intellij+all
 # Edit at https://www.gitignore.io/?templates=m2e,vim,java,grunt,emacs,sonar,linux,nanoc,macos,maven,gradle,yeoman,python,windows,eclipse,intellij,sonarqube,intellij+all
 
@@ -537,3 +536,14 @@ gradle-app.setting
 **/build/
 
 # End of https://www.gitignore.io/api/m2e,vim,java,grunt,emacs,sonar,linux,nanoc,macos,maven,gradle,yeoman,python,windows,eclipse,intellij,sonarqube,intellij+all
+
+# Customs
+.HA_VERSION
+.esphome/
+.pioenvs/
+.piolibdeps/
+.storage/
+lib/
+src/
+platformio.ini
+secrets.yaml

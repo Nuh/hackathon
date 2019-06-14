@@ -65,10 +65,7 @@ automation:
       data_template:
         title: "{{ trigger.event.data.title }}"
         message: "{{ trigger.event.data.message }}"
-        data:
-          images:
-            - /config/www/img/lunch.dziendobry.1.jpg
-
+    
   - alias: "Send Da Antonio menu"
     initial_state: 'on'
     trigger:
@@ -79,10 +76,7 @@ automation:
       data_template:
         title: "{{ trigger.event.data.title }}"
         message: "{{ trigger.event.data.message }}"
-        data:
-          images:
-            - /config/www/img/lunch.antonio.1.jpg
-
+        
   - alias: "Send AHE menu"
     initial_state: 'on'
     trigger:
@@ -93,7 +87,3 @@ automation:
       data_template:
         title: "{{ trigger.event.data.title }}"
         message: "{{ trigger.event.data.message }}"
-        data:
-          images:
-            - /config/www/img/lunch.ahe.1.jpg
-

@@ -1,10 +1,12 @@
 from homeassistant.core import callback
+from logging import getLogger
 from pyquery import PyQuery as pq
 import base64
 import re
 import requests
 
-# The domain of your component. Should be equal to the name of your component.
+LOGGER = getLogger(__name__)
+
 DOMAIN = "lunch"
 
 def normalize_name(name):
@@ -17,9 +19,10 @@ async def async_setup(hass, config):
 
     @callback
     def menu_received(event):
-        hass.states.async_set(event.attributes.id, event.attributes)
+        LOGGER.info("Menu received: %s", event.data)
+        # hass.states.async_set(event.attributes.id, event.attributes)
 
-    await hass.bus.listen(DOMAIN, menu_received)
+    hass.bus.async_listen(DOMAIN, menu_received)
 
     @callback
     def get_menu(call):
@@ -42,6 +45,7 @@ async def async_setup(hass, config):
             dataSrc = pq(img).attr("data-src")
             if dataSrc is not None:
                 menu['img'].append("data:image/jpeg;base64," + str(get_as_base64(dataSrc), 'utf-8'))
+        LOGGER.info("Downloaded menu for: %s", id)
         hass.bus.fire(id, menu)
         hass.bus.fire(DOMAIN, menu)
     

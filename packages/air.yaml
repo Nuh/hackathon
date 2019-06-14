@@ -34,7 +34,7 @@ automation:
         minutes: '/1'
     condition:
       condition: template
-      value_template: '{{ sensor.salka1_air < input_number.air_red}}'
+      value_template: '{{ sensor.salka1_air < 500}}'
     action:
       - service: light.turn_on
         data:
@@ -49,7 +49,7 @@ automation:
         minutes: '/1'
     condition:
       condition: template
-      value_template: '{{ sensor.salka1_air >= input_number.air_red}}'
+      value_template: '{{ sensor.salka1_air >= 500}}'
     action:
       - service: light.turn_on
         data:
@@ -64,7 +64,7 @@ automation:
         minutes: '/1'
     condition:
       condition: template
-      value_template: '{{ sensor.salka1_air >= input_number.air_red}}'
+      value_template: '{{ sensor.salka1_air >= 500}}'
     action:
       - service: light.turn_on
         entity_id: light.salkastatus

@@ -23,9 +23,9 @@ def get_as_base64(url):
 async def async_setup(hass, config):
     @callback
     def menu_received(event):
-        if event and event.data and event.data.has('id'):
-            LOGGER.info("Menu received: %s", event.data['id'])
-            hass.states.async_set(event.data['id'], any(event.data), event.data, True)
+        if event and event.data and event.data.has('name'):
+            LOGGER.info("Menu received: %s", event.data['name'])
+            hass.states.async_set(event.data['name'], any(event.data), event.data, True)
 
     hass.bus.async_listen(DOMAIN, menu_received)
 

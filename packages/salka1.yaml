@@ -31,7 +31,7 @@ automation:
     condition:
        - platform: state
          entity_id: binary_sensor.salka1_window
-         to: 'open'
+         state: 'open'
     action:
       - service: notify.email_send
         data:

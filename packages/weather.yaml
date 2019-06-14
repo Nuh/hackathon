@@ -16,3 +16,5 @@ sensor:
       - mediumClouds
       - highClouds
       - dewpointTemperature
+weather:
+  - platform: met

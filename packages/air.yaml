@@ -71,8 +71,6 @@ automation:
         data_template: >
           {% if states.sensor.salka1_air | float < states.input_number.air_red |float -%}
           rgb_color: [250,250,210]
-          brightness: 255
           {% else -%}
           rgb_color: [245,245,245]
-          brightness: 255
           {%- endif %}

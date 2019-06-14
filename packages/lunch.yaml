@@ -90,7 +90,7 @@ automation:
       platform: event
       event_type: lunch.piwnica
     action:
-      - data-template:
+      data-template:
         title: "{{ trigger.event.data['name'] }}"
         message: "{{ trigger.event.data['text'] }}"
       service: notify.email_send

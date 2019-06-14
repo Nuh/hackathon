@@ -13,9 +13,9 @@ homeassistant:
   time_zone: Europe/Warsaw
   temperature_unit: C
   packages: !include_dir_named packages
-
 lovelace:
   mode: yaml
+  
 config:
 hassio:
 python_script:

@@ -1,0 +1,10 @@
+automation:
+  - alias: "Zakomunikuje Lunch Piwnica"
+    initial_state: 'on'
+    trigger:
+      platform: event
+      event_type: lunch.piwnica
+    action:
+      service: notify.email_send
+      data-template:
+        title: "{{ trigger.event.data.name }}"

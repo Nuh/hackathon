@@ -1,4 +1,12 @@
 script:
+  test_window:
+    - condition: state
+      entity_id: binary_sensor.salka1_window
+      state: 'open'
+    - service: notify.email_send
+      data:
+        title: 'Zamknmij okno'
+        message: "W salce 1 zostalo otwarte okno {{states.binary_sensor.salka1_window.name}}"
   salka1:
     sequence:
       - wait_template: "{{ is_state('salka1.door', 'on') }}"
@@ -35,4 +43,3 @@ automation:
         data:
           title: 'Zamknmij okno'
           message: "W salce 1 zostalo otwarte okno"
-

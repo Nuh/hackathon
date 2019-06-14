@@ -34,7 +34,7 @@ async def async_setup(hass, config):
             dataSrc = pq(img).attr("data-src")
             if dataSrc is not None:
                 menu['img'].append("data:image/jpeg;base64," + str(get_as_base64(dataSrc), 'utf-8'))
-        hass.states.set('lunch.' + normalize_name(name), any(menu), menu, True)
+        hass.bus.fire('lunch.' + normalize_name(name), menu)
     
 
     # Register our service with Home Assistant.

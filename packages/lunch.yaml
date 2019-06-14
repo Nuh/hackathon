@@ -91,6 +91,6 @@ automation:
       event_type: lunch.piwnica
     action:
       service: notify.email_send
-      data-template:
+      data:
         title: "{{ trigger.event.data.name }}"
         message: "{{ trigger.event.data.text }}"

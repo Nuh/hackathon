@@ -1,5 +1,5 @@
 automation:
-  - alias: "Zakomunikuje Lunch Piwnica"
+  - alias: "Send Piwnica menu"
     initial_state: 'on'
     trigger:
       platform: event
@@ -12,3 +12,17 @@ automation:
         data:
           images:
             - /config/www/img/lunch.piwnica.jpg
+
+  - alias: "Send W Przerwie menu"
+    initial_state: 'on'
+    trigger:
+      platform: event
+      event_type: lunch.w-przerwie
+    action:
+      service: notify.email_send
+      data_template:
+        title: "{{ trigger.event.data.title }}"
+        message: "{{ trigger.event.data.message }}"
+        data:
+          images:
+            - /config/www/img/lunch.w_przerwie.jpg

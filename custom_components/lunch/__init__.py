@@ -27,28 +27,25 @@ async def async_setup(hass, config):
 
     @callback
     def get_menu(call):
-        fbUrl = call.data.get('url')
-        name = call.data.get('name')
-        id = normalize_name(name)
+        friendly_name = call.data.get('name')
+        fb_url = call.data.get('url')
+        name = normalize_name(friendly_name)
 
-        restaurant = pq(url=fbUrl)
-        lastPost = restaurant("div").filter(".userContentWrapper")[0]
+        restaurant = pq(url=fb_url)
+        last_post = restaurant("div").filter(".userContentWrapper")[0]
+        if last_post:
+            title = re.sub(r' - Posty | Facebook', r'', restaurant("title").text())
+            images = []
+            LOGGER.info("Downloaded menu for: %s (%s)", title, friendly_name)
 
-        menu = {}
-        menu['id'] = id
-        menu['name'] = restaurant("title").text()
-        menu['timestamp'] = pq(lastPost)("span").filter(".timestampContent").text()
-        menu['text'] = pq(lastPost)("div[data-testid='post_message'] ").text()
-        menu['img'] = []
+            for img in pq(last_post)("img"):
+                src = pq(img).attr("data-src")
+                if src is not None:
+                    images.append({'url': src, 'data': "data:image/jpeg;base64," + str(get_as_base64(src), 'utf-8')})
 
-        images = pq(lastPost)("img")
-        for img in images:
-            dataSrc = pq(img).attr("data-src")
-            if dataSrc is not None:
-                menu['img'].append("data:image/jpeg;base64," + str(get_as_base64(dataSrc), 'utf-8'))
-        LOGGER.info("Downloaded menu for: %s", id)
-        hass.bus.fire(id, menu)
-        hass.bus.fire(DOMAIN, menu)
+            menu = {'name': name, 'friendly-name': friendly_name, 'title': title, 'timestamp': pq(last_post)("span").filter(".timestampContent").text(), 'text': pq(last_post)("div[data-testid='post_message'] ").text()}
+            hass.bus.fire(name, menu)
+            hass.bus.fire(DOMAIN, menu)
     
 
     # Register our service with Home Assistant.

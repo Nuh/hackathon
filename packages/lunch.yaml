@@ -10,3 +10,77 @@ automation:
       data:
         name: "lunch.w-przerwie"
         url: "https://www.facebook.com/CaffeBar-W-przerwie-1054077651328337/posts"
+  
+  - alias: "Lunch: Piwnica"
+    initial_state: 'on'
+    trigger:
+      platform: time_pattern
+      hours: '1'
+      minutes: '*'
+    action:
+      service: python_script.get_menu
+      data:
+        name: "lunch.piwnica"
+        url: "https://www.facebook.com/piwnicasmakow1/posts"
+  
+  - alias: "Lunch: Solo"
+    initial_state: 'on'
+    trigger:
+      platform: time_pattern
+      hours: '1'
+      minutes: '*'
+    action:
+      service: python_script.get_menu
+      data:
+        name: "lunch.solo"
+        url: "https://www.facebook.com/solo.pizza.poland/posts"
+
+  - alias: "Lunch: Mauroski"    
+    initial_state: 'on'
+    trigger:
+      platform: time_pattern
+      hours: '1'
+      minutes: '*'
+    action:
+      service: python_script.get_menu
+      data:
+        name: "lunch.mauroski"
+        url: "https://www.facebook.com/cafebistroparking/posts"
+
+  - alias: "Lunch: Dzien Dobry"    
+    initial_state: 'on'
+    trigger:
+      platform: time_pattern
+      hours: '1'
+      minutes: '*'
+    action:
+      service: python_script.get_menu
+      data:
+        name: "lunch.dziendobry"
+        url: "https://www.facebook.com/dziendobrycaffe/posts"
+
+
+  - alias: "Lunch: Da Antonio"    
+    initial_state: 'on'
+    trigger:
+      platform: time_pattern
+      hours: '1'
+      minutes: '*'
+    action:
+      service: python_script.get_menu
+      data:
+        name: "lunch.antonio"
+        url: "https://www.facebook.com/RestauracjaDaAntonio/posts"
+
+  - alias: "Lunch: AHE"    
+    initial_state: 'on'
+    trigger:
+      platform: time_pattern
+      hours: '1'
+      minutes: '*'
+    action:
+      service: python_script.get_menu
+      data:
+        name: "lunch.ahe"
+        url: "https://www.facebook.com/Kuchniadomowaanozwidelec/posts"
+

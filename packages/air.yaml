@@ -70,10 +70,6 @@ automation:
         data:
           brightness: 255
           rgb_color: >
-            if (sensor.salka1_air |float >= input_number.air_red |float ) {
-              return [255, 0, 0];
-            } else {
-              return [0, 255, 0];
-            }
+           {% if sensor.salka1_air |float >= input_number.air_red |float %}[0,0,255]{% else %}[255,255,255]{% endif %}
           entity_id:
             - light.salkastatus

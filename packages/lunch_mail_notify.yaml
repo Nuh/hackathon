@@ -7,5 +7,8 @@ automation:
     action:
       service: notify.email_send
       data_template:
-        title: "{{ trigger.event.data.name }}"
-        message: "{{ trigger.event.data.text }}"
+        title: "{{ trigger.event.data.title }}"
+        message: "{{ trigger.event.data.message }}"
+        data:
+          images:
+            - /config/www/img/lunch.piwnica.jpg

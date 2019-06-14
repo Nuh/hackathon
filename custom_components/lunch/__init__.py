@@ -1,8 +1,13 @@
 from homeassistant.core import callback
 from pyquery import PyQuery as pq
+import base64
 
 # The domain of your component. Should be equal to the name of your component.
 DOMAIN = "lunch"
+
+def get_as_base64(url):
+
+    return base64.b64encode(requests.get(url).content)
 
 async def async_setup(hass, config):
    

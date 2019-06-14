@@ -3,8 +3,8 @@ automation:
     initial_state: 'on'
     trigger:
       platform: time_pattern
-      hours: '1'
-      minutes: '*'
+      hours: '11'
+      minutes: '30'
     action:
       service: lunch.get_menu
       data:
@@ -15,8 +15,8 @@ automation:
     initial_state: 'on'
     trigger:
       platform: time_pattern
-      hours: '1'
-      minutes: '*'
+      hours: '11'
+      minutes: '30'
     action:
       service: lunch.get_menu
       data:
@@ -27,8 +27,8 @@ automation:
     initial_state: 'on'
     trigger:
       platform: time_pattern
-      hours: '1'
-      minutes: '*'
+      hours: '11'
+      minutes: '30'
     action:
       service: lunch.get_menu
       data:
@@ -39,8 +39,8 @@ automation:
     initial_state: 'on'
     trigger:
       platform: time_pattern
-      hours: '1'
-      minutes: '*'
+      hours: '11'
+      minutes: '30'
     action:
       service: lunch.get_menu
       data:
@@ -51,8 +51,8 @@ automation:
     initial_state: 'on'
     trigger:
       platform: time_pattern
-      hours: '1'
-      minutes: '*'
+      hours: '11'
+      minutes: '30'
     action:
       service: lunch.get_menu
       data:
@@ -64,8 +64,8 @@ automation:
     initial_state: 'on'
     trigger:
       platform: time_pattern
-      hours: '1'
-      minutes: '*'
+      hours: '11'
+      minutes: '30'
     action:
       service: lunch.get_menu
       data:
@@ -76,8 +76,8 @@ automation:
     initial_state: 'on'
     trigger:
       platform: time_pattern
-      hours: '1'
-      minutes: '*'
+      hours: '11'
+      minutes: '30'
     action:
       service: lunch.get_menu
       data:

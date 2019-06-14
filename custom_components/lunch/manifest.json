@@ -1,0 +1,9 @@
+{
+  "domain": "lunch",
+  "name": "Lunch",
+  "documentation": "",
+  "dependencies": [],
+  "codeowners": [],
+  "requirements": ["pyquery==1.4.0"]
+}
+

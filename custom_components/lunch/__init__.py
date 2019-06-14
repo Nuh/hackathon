@@ -50,6 +50,7 @@ async def async_setup(hass, config):
                     images.append({
                         'url': src,
                         'path': local_path,
+                        'script_path': re.sub(r'^/config/www', r'/local', local_path),
                         'data': "data:image/jpeg;base64," + str(get_as_base64(src), 'utf-8')
                     })
                     urllib.request.urlretrieve(src, local_path)

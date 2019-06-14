@@ -84,3 +84,13 @@ automation:
         name: "lunch.ahe"
         url: "https://www.facebook.com/Kuchniadomowaanozwidelec/posts"
 
+  - alias: "Zakomunikuje Lunch Piwnica"
+    initial_state: 'on'
+    trigger:
+      platform: event
+      event_type: "lunch.piwnica"
+    action:
+      - service: notify.email_send
+        data:
+          title: '{{trigger.event.data['name']}}'
+          message: "{{trigger.event.data['text']}}"

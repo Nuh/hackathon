@@ -42,9 +42,8 @@ automation:
   - alias: "Salka1 LED Good"
     initial_state: true
     trigger:
-      platform: numeric_state
-      entity_id: sensor.salka1_air
-      below: 800
+      platform: template
+      value_template: "{{ states.sensor.salka1_air.state | float < states.input_number.air_red.state | float }}"
     action:
       - service: light.turn_on
         data:

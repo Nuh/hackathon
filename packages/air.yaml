@@ -57,3 +57,23 @@ automation:
           rgb_color: [255, 0, 0]
           entity_id:
             - light.salkastatus
+  - alias: "Salka1 LED AAALLLL"
+    initial_state: true
+    trigger:
+      - platform: time_pattern
+        minutes: '/1'
+    condition:
+      condition: template
+      value_template: '{{ sensor.salka1_air >= input_number.air_red}}'
+    action:
+      - service: light.turn_on
+        data:
+          brightness: 255
+          rgb_color: >
+            if (sensor.salka1_air |float >= input_number.air_red |float ) {
+              return [255, 0, 0];
+            } else {
+              return [0, 255, 0];
+            }
+          entity_id:
+            - light.salkastatus

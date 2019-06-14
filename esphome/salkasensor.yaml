@@ -36,20 +36,23 @@ output:
   - platform: esp8266_pwm
     id: output_component1
     pin: D5
+    inverted: True
   - platform: esp8266_pwm
     id: output_component2
     pin: D6
+    inverted: True
   - platform: esp8266_pwm
     id: output_component3
     pin: D7
+    inverted: True
     
 
 sensor:
   - platform: mhz19
     co2:
-      name: "MH-Z19 CO2 Value"
+      name: "salka1_air"
     temperature:
-      name: "MH-Z19 Temperature"
+      name: "salka1_temp"
     update_interval: 60s
     
   - platform: bme280

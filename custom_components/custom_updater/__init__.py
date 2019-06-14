@@ -68,7 +68,7 @@ async def async_setup(hass, config):
 
     _LOGGER.debug('Version %s', VERSION)
     _LOGGER.debug('Mode %s', conf_mode)
-    
+
     hass.http.register_view(CustomCardsView(str(hass.config.path())))
 
     if conf_mode == 'yaml':

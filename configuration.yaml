@@ -15,7 +15,7 @@ homeassistant:
   packages: !include_dir_named packages
 lovelace:
   mode: yaml
-  
+
 config:
 hassio:
 python_script:
@@ -25,9 +25,19 @@ conversation:
 map:
 
 logger:
-  default: error
+  default: info
   logs:
-    homeassistant.custom_components.emulated_roku: info
+    homeassistant.components.automation: info
+    homeassistant.components.scripts: info
+    homeassistant.config: info
+    homeassistant.log: info
+    homeassistant.components.xiaomi_aqara: fatal
+    homeassistant.components.binary_sensor.xiaomi_aqara: fatal
+    homeassistant.components.sensor.xiaomi_aqara: fatal
+    homeassistant.components.light.xiaomi_aqara: fatal
+    homeassistant.components.switch.xiaomi_aqara: fatal
+    homeassistant.components.light.xiaomi_miio: fatal
+    homeassistant.components.mqtt: fatal
 
 mqtt:
     # discovery: clean

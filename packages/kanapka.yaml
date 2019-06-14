@@ -41,3 +41,18 @@ automation:
           data:
             images:
               - /config/www/img/musztarda.jpg
+
+- alias: "BLE KANAPKA"
+    initial_state: 'on'
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.testbledongle
+        to: 'on'
+    action:
+      - service: notify.email_send
+        data:
+          title: 'Musztarda'
+          message: "BLE - usztarda znajduje się w biurze"
+          data:
+            images:
+              - /config/www/img/musztarda.jpg

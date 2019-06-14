@@ -42,3 +42,6 @@ mqtt:
 media_player:
   - platform: samsungtv
     host: 10.122.18.154
+
+#systemik obiadowy
+lunch:

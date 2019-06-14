@@ -25,9 +25,7 @@ automation:
   - alias: salka1_close_windows
     trigger:
       - platform: time
-        hours: 18
-        minutes: 0
-        seconds: 0
+        at: '18:00:00'
     condition:
        - platform: state
          entity_id: binary_sensor.salka1_window

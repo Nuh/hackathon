@@ -25,4 +25,4 @@ automation:
         message: "{{ trigger.event.data.message }}"
         data:
           images:
-            - /config/www/img/lunch.w_przerwie.jpg
+            - /config/www/img/lunch.w-przerwie.jpg

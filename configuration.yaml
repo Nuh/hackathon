@@ -27,6 +27,7 @@ map:
 
 logger:
   default: info
+sensor:
   
 mqtt:
     # discovery: clean

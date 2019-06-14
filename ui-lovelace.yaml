@@ -46,15 +46,3 @@ views:
     cards:
       - type: picture
         image: /local/img/tu_kuba.jpg
-      - type: entities
-        title: 'Stacja pogody Airly'
-        entities:
-          - entity: sensor.airly_quality
-          - entity: sensor.airly_level
-          - entity: sensor.airly_description
-          - entity: sensor.airly_temperature
-          - entity: sensor.airly_humidity
-          - entity: sensor.airly_pressure
-          - entity: sensor.airly_pm1
-          - entity: sensor.airly_pm25
-          - entity: sensor.airly_pm10

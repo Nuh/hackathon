@@ -69,7 +69,7 @@ automation:
       - service: light.turn_on
         entity_id: light.salkastatus
         data_template: >
-          {% states.sensor.salka1_air | float < states.input_number.air_red |float %}
+          {% if states.sensor.salka1_air | float < states.input_number.air_red |float %}
              {% set d = {'rgb_color':[255,0,0]} %}
           {% else %}
             {% set d = {'rgb_color':[0,255,0] } %}

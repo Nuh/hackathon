@@ -19,14 +19,14 @@ groups:
       - sensor.airly_pm25
       - sensor.airly_pm10
 sensor:
-    - platform: rest
-        scan_interval: 900
-        name: Airly
-        resource: https://airapi.airly.eu/v2/measurements/nearest?lat=49.72347&lng=22.04834&maxDistanceKM=5
-        value_template: "{{ value_json['current']['values'][0]['value'] }} {{ value_json['current']['values'][1]['value'] }} {{ value_json['current']['values'][2]['value'] }} {{ value_json['current']['values'][3]['value'] }} {{ value_json['current']['values'][4]['value'] }} {{ value_json['current']['values'][5]['value'] }} {{ value_json['current']['indexes'][0]['level'] }} {{ value_json['current']['indexes'][0]['value'] }} {{ value_json['current']['indexes'][0]['description'] }}"
-        headers:
-        apikey: API_AIRLY
-        Accept-Language: pl
+  - platform: rest
+      scan_interval: 900
+      name: Airly
+      resource: https://airapi.airly.eu/v2/measurements/nearest?lat=49.72347&lng=22.04834&maxDistanceKM=5
+      value_template: "{{ value_json['current']['values'][0]['value'] }} {{ value_json['current']['values'][1]['value'] }} {{ value_json['current']['values'][2]['value'] }} {{ value_json['current']['values'][3]['value'] }} {{ value_json['current']['values'][4]['value'] }} {{ value_json['current']['values'][5]['value'] }} {{ value_json['current']['indexes'][0]['level'] }} {{ value_json['current']['indexes'][0]['value'] }} {{ value_json['current']['indexes'][0]['description'] }}"
+      headers:
+      apikey: API_AIRLY
+      Accept-Language: pl
   - platform: rest
     name: GiosAir
     #curl -X GET     --header 'Accept: application/json'  http://api.gios.gov.pl/pjp-api/rest/station/sensors/295
@@ -37,9 +37,9 @@ sensor:
 input_number:
   air_red:
     name: Slider
-    initial: 800
+    initial: 1000
     min: 0
-    max: 1000
+    max: 5000
     step: 100
 automation:
   - alias: "Status Powietrza"
@@ -55,3 +55,19 @@ automation:
         data:
           title: 'Jakość Powietrza'
           message: "Uważaj na siebie powietrze nie jest za czyste {{states.sensor.giosair.state}} PM"
+  - alias: "Salka1 -LED "
+    initial_state: true
+    trigger:
+      - platform: time
+        minutes: '1'
+    condition:
+      condition: numeric_state
+      entity_id: sensor.salka1_air
+      above: input_number.air_red
+    action:
+      - service: light.turn_on
+        data:
+          brightness: 255
+          rgb_color: [255, 0, 0]
+          entity_id:
+            - light.salkastatus

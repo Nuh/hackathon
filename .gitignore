@@ -2,6 +2,7 @@
 # Edit at https://www.gitignore.io/?templates=m2e,vim,java,grunt,emacs,sonar,linux,nanoc,macos,maven,gradle,yeoman,python,windows,eclipse,intellij,sonarqube,intellij+all
 
 ### Eclipse ###
+
 .metadata
 bin/
 tmp/
@@ -244,7 +245,7 @@ modules.xml
 
 # Log file
 *.log
-
+ui-lovelace.yaml
 # BlueJ files
 *.ctxt
 

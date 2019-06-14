@@ -42,7 +42,7 @@ automation:
             images:
               - /config/www/img/musztarda.jpg
 
-- alias: "BLE KANAPKA"
+  - alias: "BLE KANAPKA"
     initial_state: 'on'
     trigger:
       - platform: state

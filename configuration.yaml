@@ -16,7 +16,6 @@ homeassistant:
 
 lovelace:
   mode: yaml
-
 config:
 hassio:
 python_script:

@@ -6,5 +6,5 @@ automation:
       event_type: lunch.piwnica
     action:
       service: notify.email_send
-      data-template:
+      - data-template:
         title: "{{ trigger.event.data.name }}"

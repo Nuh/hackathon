@@ -36,7 +36,7 @@ automation:
       - service: light.turn_on
         data:
           brightness: 255
-          rgb_color: [0, 255, 0]
+          rgb_color: [255, 0, 0]
           entity_id:
             - light.salkastatus
   - alias: "Salka1 LED Good"
@@ -49,7 +49,7 @@ automation:
       - service: light.turn_on
         data:
           brightness: 255
-          rgb_color: [255, 0, 0]
+          rgb_color: [0, 255, 0]
           entity_id:
             - light.salkastatus
   - #alias: "Salka1 LED AAALLLL"

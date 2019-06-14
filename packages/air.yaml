@@ -34,7 +34,7 @@ automation:
         minutes: '/1'
     condition:
       condition: template
-      value_template: '{{ sensor.salka1_air < 500}}'
+      value_template: '{{ sensor.salka1_air < 800}}'
     action:
       - service: light.turn_on
         data:
@@ -49,7 +49,7 @@ automation:
         minutes: '/1'
     condition:
       condition: template
-      value_template: '{{ sensor.salka1_air >= 500}}'
+      value_template: '{{ sensor.salka1_air >= 800}}'
     action:
       - service: light.turn_on
         data:
@@ -57,16 +57,16 @@ automation:
           rgb_color: [255, 0, 0]
           entity_id:
             - light.salkastatus
-  - alias: "Salka1 LED AAALLLL"
-    initial_state: true
-    trigger:
-      - platform: time_pattern
-        minutes: '/1'
-    condition:
-      condition: template
-      value_template: '{{ sensor.salka1_air >= 500}}'
-    action:
-      - service: light.turn_on
-        entity_id: light.salkastatus
-        data_template:
-           rgb_color: ['{% if states.sensor.salka1_air | float < states.input_number.air_red |float %}255{% else %}0{% endif %}', '{% if states.sensor.salka1_air | float < states.input_number.air_red |float %}0{% else %}255{% endif %}', '0']
+  - #alias: "Salka1 LED AAALLLL"
+    #initial_state: true
+    #trigger:
+    #  - platform: time_pattern
+    #    minutes: '/1'
+    #condition:
+    #  condition: template
+    #  value_template: '{{ sensor.salka1_air >= 500}}'
+    #action:
+    #  - service: light.turn_on
+    #    entity_id: light.salkastatus
+    #    data_template:
+    #       rgb_color: ['{% if states.sensor.salka1_air | float < states.input_number.air_red |float %}255{% else %}0{% endif %}', '{% if states.sensor.salka1_air | float < states.input_number.air_red |float %}0{% else %}255{% endif %}', '0']

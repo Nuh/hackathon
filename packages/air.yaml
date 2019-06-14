@@ -68,7 +68,7 @@ automation:
     action:
       - service: light.turn_on
         entity_id: light.salkastatus
-        data_template:
+        data_template: >
           {% if states.sensor.salka1_air | float < states.input_number.air_red |float -%}
           rgb_color: 250,250,210
           brightness: 255

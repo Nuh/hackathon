@@ -17,6 +17,7 @@ lovelace:
 
 config:
 hassio:
+python_script:
 
 sun:
 conversation:

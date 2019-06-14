@@ -1,6 +1,8 @@
 import base64
 import re
 import requests
+import urllib.request
+
 from homeassistant.core import callback
 from logging import getLogger
 from pyquery import PyQuery as pq
@@ -43,17 +45,21 @@ async def async_setup(hass, config):
             for img in pq(last_post)("img"):
                 src = pq(img).attr("data-src")
                 if src is not None:
+                    local_path = "/config/www/img/" + name + ".jpg"
                     images.append({
                         'url': src,
+                        'path': local_path,
                         'data': "data:image/jpeg;base64," + str(get_as_base64(src), 'utf-8')
                     })
+                    urllib.request.urlretrieve(src, local_path)
 
             menu = {
                 'name': name,
                 'friendly-name': friendly_name,
                 'title': title,
                 'timestamp': pq(last_post)("span").filter(".timestampContent").text(),
-                'text': pq(last_post)("div[data-testid='post_message'] ").text()
+                'message': pq(last_post)("div[data-testid='post_message']").text(),
+                'images': images
             }
 
             hass.bus.fire(name, menu)

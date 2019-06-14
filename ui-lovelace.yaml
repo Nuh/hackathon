@@ -95,7 +95,7 @@ views:
             image: /local/img/plan/1p.PNG
             elements:
               - type: state-icon
-                entity: light.mudroom_light_level
+                entity: input_boolean.salka_1_status
                 tap_action: toggle
                 style:
                   top: 60%

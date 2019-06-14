@@ -70,6 +70,6 @@ automation:
         entity_id: light.salkastatus
         data_template:
           color_name: >
-            {% if if states.sensor.salka1_air | float < states.input_number.air_red |float %} {"color_name": "green"}}
+            {% if states.sensor.salka1_air | float < states.input_number.air_red |float %} {"color_name": "green"}}
             {%-else %} {"color_name": "red"}}
             {% endif %}

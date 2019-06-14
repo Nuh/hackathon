@@ -88,7 +88,7 @@ automation:
     initial_state: 'on'
     trigger:
       platform: event
-      event_type: "lunch.piwnica"
+      event_type: lunch.piwnica
     action:
       - service: notify.email_send
         data:

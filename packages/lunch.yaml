@@ -88,9 +88,9 @@ automation:
     initial_state: 'on'
     trigger:
       platform: event
-      event_type: lunch.piwnica
+      event_type: changed.state.lunch.piwnica
     action:
       - service: notify.email_send
         data:
-          title: "{{trigger.event.data['name']}}"
-          message: "{{trigger.event.data['text']}}"
+          title: "{{hass.states.get('lunch.piwnica').attributes['name']}}"
+          message: "{{hass.states.get('lunch.piwnica').attributes['text']}}"

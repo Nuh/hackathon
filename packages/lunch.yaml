@@ -92,5 +92,6 @@ automation:
     action:
       - service: notify.email_send
         data:
-          title: {{ trigger.event.data["name"] }}
+          title: >
+            {{ trigger.event.data["name"] }}
           message: "PIWNICA"

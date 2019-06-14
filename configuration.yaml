@@ -6,6 +6,8 @@ sensor:
 tts:
   - platform: google_translate
 
+history:
+
 homeassistant:
   unit_system: metric
   time_zone: Europe/Warsaw

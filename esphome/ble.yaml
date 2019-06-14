@@ -1,0 +1,27 @@
+# Example configuration entry
+esphomeyaml:
+  name: "ble_tracker"
+  platform: ESP32
+  board: nodemcu-32s
+  # board_flash_mode: dout
+wifi:
+  ssid: "salamanders"
+  password: "securnesecurne"
+
+ota:
+  safe_mode: True
+
+api:
+
+esp32_ble_tracker:
+  scan_interval: 60s
+
+binary_sensor:
+  - platform: ble_presence
+    mac_address: B0:EB:57:81:52:15
+    name: "KANAPKA_1_ble"
+
+sensor:
+  - platform: ble_rssi
+    mac_address: B0:EB:57:81:52:15
+    name: "KANAPKA_1_ble"

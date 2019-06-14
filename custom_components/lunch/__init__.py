@@ -23,7 +23,7 @@ def get_as_base64(url):
 async def async_setup(hass, config):
     @callback
     def menu_received(event):
-        if event and event.data and event.data.has('name'):
+        if event and event.data and event.data.get('name'):
             LOGGER.info("Menu received: %s", event.data['name'])
             hass.states.async_set(event.data['name'], any(event.data), event.data, True)
 
@@ -42,16 +42,18 @@ async def async_setup(hass, config):
             images = []
             LOGGER.info("Downloaded menu for: %s (%s)", title, friendly_name)
 
+            i = 1
             for img in pq(last_post)("img"):
                 src = pq(img).attr("data-src")
                 if src is not None:
-                    local_path = "/config/www/img/" + name + ".jpg"
+                    local_path = "/config/www/img/" + name + "." + str(i) + ".jpg"
                     images.append({
                         'url': src,
                         'path': local_path,
                         'data': "data:image/jpeg;base64," + str(get_as_base64(src), 'utf-8')
                     })
                     urllib.request.urlretrieve(src, local_path)
+                    i = i+1
 
             menu = {
                 'name': name,

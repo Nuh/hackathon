@@ -552,3 +552,4 @@ lib/
 src/
 platformio.ini
 secrets.yaml
+www/custom_ui/*

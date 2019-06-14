@@ -1,5 +1,5 @@
 input_boolean:
-  notify_home:
+  salka_1_status:
     name: Salka 1 Status
     initial: off
 automation:

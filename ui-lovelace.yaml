@@ -72,3 +72,4 @@ views:
           - entity: alarm_control_panel.alarm
             name: Alarm Panel
           - device_tracker.demo_paulus
+        entity: input_boolean.salka_1_status

@@ -11,7 +11,7 @@ automation:
         message: "{{ trigger.event.data.message }}"
         data:
           images:
-            - /config/www/img/lunch.piwnica.jpg
+            - /config/www/img/lunch.piwnica.1.jpg
 
   - alias: "Send W Przerwie menu"
     initial_state: 'on'
@@ -25,4 +25,75 @@ automation:
         message: "{{ trigger.event.data.message }}"
         data:
           images:
-            - /config/www/img/lunch.w-przerwie.jpg
+            - /config/www/img/lunch.w-przerwie.1.jpg
+
+  - alias: "Send Solo menu"
+    initial_state: 'on'
+    trigger:
+      platform: event
+      event_type: lunch.solo
+    action:
+      service: notify.email_send
+      data_template:
+        title: "{{ trigger.event.data.title }}"
+        message: "{{ trigger.event.data.message }}"
+        data:
+          images:
+            - /config/www/img/lunch.solo.1.jpg
+
+  - alias: "Send Mauroski menu"
+    initial_state: 'on'
+    trigger:
+      platform: event
+      event_type: lunch.mauroski
+    action:
+      service: notify.email_send
+      data_template:
+        title: "{{ trigger.event.data.title }}"
+        message: "{{ trigger.event.data.message }}"
+        data:
+          images:
+            - /config/www/img/lunch.mauroski.1.jpg
+
+  - alias: "Send dziendobry menu"
+    initial_state: 'on'
+    trigger:
+      platform: event
+      event_type: lunch.dziendobry
+    action:
+      service: notify.email_send
+      data_template:
+        title: "{{ trigger.event.data.title }}"
+        message: "{{ trigger.event.data.message }}"
+        data:
+          images:
+            - /config/www/img/lunch.dziendobry.1.jpg
+
+  - alias: "Send Da Antonio menu"
+    initial_state: 'on'
+    trigger:
+      platform: event
+      event_type: lunch.antonio
+    action:
+      service: notify.email_send
+      data_template:
+        title: "{{ trigger.event.data.title }}"
+        message: "{{ trigger.event.data.message }}"
+        data:
+          images:
+            - /config/www/img/lunch.antonio.1.jpg
+
+  - alias: "Send AHE menu"
+    initial_state: 'on'
+    trigger:
+      platform: event
+      event_type: lunch.ahe
+    action:
+      service: notify.email_send
+      data_template:
+        title: "{{ trigger.event.data.title }}"
+        message: "{{ trigger.event.data.message }}"
+        data:
+          images:
+            - /config/www/img/lunch.ahe.1.jpg
+

@@ -6,7 +6,7 @@ automation:
       hours: '1'
       minutes: '*'
     action:
-      service: python_script.get_menu
+      service: lunch.get_menu
       data:
         name: "lunch.w-przerwie"
         url: "https://www.facebook.com/CaffeBar-W-przerwie-1054077651328337/posts"
@@ -18,7 +18,7 @@ automation:
       hours: '1'
       minutes: '*'
     action:
-      service: python_script.get_menu
+      service: lunch.get_menu
       data:
         name: "lunch.piwnica"
         url: "https://www.facebook.com/piwnicasmakow1/posts"
@@ -30,7 +30,7 @@ automation:
       hours: '1'
       minutes: '*'
     action:
-      service: python_script.get_menu
+      service: lunch.get_menu
       data:
         name: "lunch.solo"
         url: "https://www.facebook.com/solo.pizza.poland/posts"
@@ -42,7 +42,7 @@ automation:
       hours: '1'
       minutes: '*'
     action:
-      service: python_script.get_menu
+      service: lunch.get_menu
       data:
         name: "lunch.mauroski"
         url: "https://www.facebook.com/cafebistroparking/posts"
@@ -54,7 +54,7 @@ automation:
       hours: '1'
       minutes: '*'
     action:
-      service: python_script.get_menu
+      service: lunch.get_menu
       data:
         name: "lunch.dziendobry"
         url: "https://www.facebook.com/dziendobrycaffe/posts"
@@ -67,7 +67,7 @@ automation:
       hours: '1'
       minutes: '*'
     action:
-      service: python_script.get_menu
+      service: lunch.get_menu
       data:
         name: "lunch.antonio"
         url: "https://www.facebook.com/RestauracjaDaAntonio/posts"
@@ -79,7 +79,7 @@ automation:
       hours: '1'
       minutes: '*'
     action:
-      service: python_script.get_menu
+      service: lunch.get_menu
       data:
         name: "lunch.ahe"
         url: "https://www.facebook.com/Kuchniadomowaanozwidelec/posts"

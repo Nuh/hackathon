@@ -92,5 +92,5 @@ automation:
     action:
       - service: notify.email_send
         data:
-          title: "{{hass.states.get('lunch.piwnica').attributes['name']}}"
-          message: "{{hass.states.get('lunch.piwnica').attributes['text']}}"
+          title: "XYZ"
+          message: "PIWNICA"

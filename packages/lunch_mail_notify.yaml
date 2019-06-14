@@ -17,7 +17,7 @@ automation:
     initial_state: 'on'
     trigger:
       platform: event
-      event_type: lunch.w-przerwie
+      event_type: lunch.w_przerwie
     action:
       service: notify.email_send
       data_template:
@@ -25,7 +25,7 @@ automation:
         message: "{{ trigger.event.data.message }}"
         data:
           images:
-            - /config/www/img/lunch.w-przerwie.1.jpg
+            - /config/www/img/lunch.w_przerwie.1.jpg
 
   - alias: "Send Solo menu"
     initial_state: 'on'

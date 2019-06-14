@@ -8,7 +8,7 @@ automation:
     action:
       service: lunch.get_menu
       data:
-        name: "lunch.w-przerwie"
+        name: "lunch.w_przerwie"
         url: "https://www.facebook.com/CaffeBar-W-przerwie-1054077651328337/posts"
   
   - alias: "Lunch: Piwnica"

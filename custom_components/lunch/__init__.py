@@ -1,6 +1,7 @@
 from homeassistant.core import callback
 from pyquery import PyQuery as pq
 import base64
+import requests
 
 # The domain of your component. Should be equal to the name of your component.
 DOMAIN = "lunch"

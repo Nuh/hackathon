@@ -94,9 +94,36 @@ views:
           - type: picture-elements
             image: /local/img/plan/1p.PNG
             elements:
-              - type: state-icon
-                entity: input_boolean.salka_1_status
-                tap_action: toggle
-                style:
-                  top: 60%
-                  left: 67%
+              - type: picture-elements
+                image:  /local/img/plan/1p.PNG
+                elements:
+                - type: image
+                  tap_action: toggle
+                  entity: light.kitchen
+                  image: /local/img/plan/salka.PNG
+                  state_filter:
+                    "off": opacity(50%)
+                    "on": opacity(1%)
+                  style:
+                    top: 19%
+                    left: 27%
+                    width: 39.75%
+  - title: Main Floor22
+    id: main-floor
+    icon: mdi:wrench
+    panel: true
+    cards:
+      - type: picture-elements
+        image:  /local/img/plan/1p.PNG
+        elements:
+        - type: image
+          tap_action: toggle
+          entity: light.kitchen
+          image: /local/img/plan/salka.PNG
+          state_filter:
+            "off": opacity(50%)
+            "on": opacity(1%)
+          style:
+            top: 19%
+            left: 27%
+            width: 39.75%

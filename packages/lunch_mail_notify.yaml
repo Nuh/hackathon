@@ -75,7 +75,10 @@ automation:
       service: notify.email_send
       data_template:
         title: "{{ trigger.event.data.title }}"
-        message: "{{ trigger.event.data.message }}"
+        message: >
+          Post z: {{ trigger.event.data.timestamp }}
+          {{ trigger.event.data.message }}
+          Smacznego życzy The Second Salamander
         
   - alias: "Send AHE menu"
     initial_state: 'on'

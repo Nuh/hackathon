@@ -12,16 +12,11 @@ menu['timestamp'] = pq(lastPost)("span").filter(".timestampContent").text()
 menu['text'] = pq(lastPost)("div[data-testid='post_message'] ").text()
 menu['img'] = []
 
-print(restaurant("title").text())
-print("timestamp: " + pq(lastPost)("span").filter(".timestampContent").text())
-print("description: " + pq(lastPost)("div[data-testid='post_message'] ").text())
-# print("img: " + pq(lastPost)("img").attr("data-src"))	
-print("imgages: ")
 images = pq(lastPost)("img")
 for img in images:
 	dataSrc = pq(img).attr("data-src")
 	if dataSrc is not None:
-		menu['img'].append(pq(img).attr("data-src"))
-		print(pq(img).attr("data-src"))	
+		menu['img'].append("data:image/jpeg;base64," + str(get_as_base64(dataSrc), 'utf-8'))
+		
 
 hass.bus.fire(name, menu)

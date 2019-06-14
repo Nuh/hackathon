@@ -1,5 +1,5 @@
 # Example configuration entry
-esphomeyaml:
+esphome:
   name: "ble_tracker"
   platform: ESP32
   board: nodemcu-32s
@@ -8,10 +8,13 @@ wifi:
   ssid: "salamanders"
   password: "securnesecurne"
 
-ota:
-  safe_mode: True
+# Enable logging
+logger:
 
+# Enable Home Assistant API
 api:
+
+ota:
 
 esp32_ble_tracker:
   scan_interval: 60s

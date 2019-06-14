@@ -23,9 +23,9 @@ def get_as_base64(url):
 async def async_setup(hass, config):
     @callback
     def menu_received(event):
-        if event and event.data and event.data.id:
-            LOGGER.info("Menu received: %s", event.data.id)
-            hass.states.async_set(event.data.id, any(event.data), event.data, True)
+        if event and event.data and event.data.has('id'):
+            LOGGER.info("Menu received: %s", event.data['id'])
+            hass.states.async_set(event.data['id'], any(event.data), event.data, True)
 
     hass.bus.async_listen(DOMAIN, menu_received)
 
@@ -38,7 +38,7 @@ async def async_setup(hass, config):
         restaurant = pq(url=fb_url)
         last_post = restaurant("div").filter(".userContentWrapper")[0]
         if last_post:
-            title = re.sub(r' - Posty | Facebook', r'', restaurant("title").text())
+            title = re.sub(r'( - Posts| - Posty| \| Facebook)', r'', restaurant("title").text())
             images = []
             LOGGER.info("Downloaded menu for: %s (%s)", title, friendly_name)
 

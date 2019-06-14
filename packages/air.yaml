@@ -30,6 +30,9 @@ automation:
   - alias: "Salka1 LED BAD"
     initial_state: true
     trigger:
+      - platform: template
+        value_template: "{{ states('input_number.sensor.salka1_air')| int > states('sensor.input_number.air_red') |int }}"
+    trigger:
       platform: numeric_state
       entity_id: sensor.salka1_air
       above: 800
@@ -43,10 +46,8 @@ automation:
   - alias: "Salka1 LED Good"
     initial_state: true
     trigger:
-      platform: numeric_state
-      entity_id: sensor.salka1_air
-      below: 800
-    action:
+      - platform: template
+        value_template: "{{ states.sensor.salka1_air.state | float > states.input_number.air_red.state | float }}"
       - service: light.turn_on
         data:
           brightness: 255

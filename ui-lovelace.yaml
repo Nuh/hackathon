@@ -4,6 +4,8 @@ panel: true
 resources:
   # - type: css
   #   url: /local/styles.css?v=0.05
+  - url: /local/plan-coordinates.js?v=1
+    type: js
   - url: /customcards/github/nervetattoo/banner-card.js?track=true
     type: module
   - url:  /local/custom_ui/battery-entity.js?v=0.1
@@ -81,3 +83,20 @@ views:
           - sensor.custom_card_tracker
           - sensor.custom_python_script_tracker
           - sensor.custom_component_tracker
+  - title: Main Floor
+    id: main-floor
+    icon: mdi:wrench
+    panel: true
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:plan-coordinates
+          - type: picture-elements
+            image: /local/img/plan/1p.PNG
+            elements:
+              - type: state-icon
+                entity: light.mudroom_light_level
+                tap_action: toggle
+                style:
+                  top: 60%
+                  left: 67%

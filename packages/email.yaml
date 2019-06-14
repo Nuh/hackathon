@@ -1,5 +1,5 @@
 notify:
-  - name: email_kanapka
+  - name: email
     platform: smtp
     server: smtp.gmail.com
     port: 587
@@ -10,4 +10,4 @@ notify:
     password: wapjA7-herbyz-sovtaz
     recipient:
       - 33b7e72f.idemia.com@emea.teams.ms
-    sender_name: My Home Assistant
+    sender_name: Second Salamander

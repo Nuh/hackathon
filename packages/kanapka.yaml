@@ -6,7 +6,7 @@ automation:
         entity_id: binary_sensor.kanapka_1
         to: 'on'
     action:
-      - service: notify.email_kanapka
+      - service: notify.email
         data:
           title: 'Szop na miejscu'
           message: "Szop znajduje się przed biurem"
@@ -20,7 +20,7 @@ automation:
         entity_id: binary_sensor.kanapka_2
         to: 'on'
     action:
-      - service: notify.email_kanapka
+      - service: notify.email
         data:
           title: 'Tu Kuba'
           message: "TuKuba znajduje się przed biurem"
@@ -34,7 +34,7 @@ automation:
         entity_id: binary_sensor.kanapka_3
         to: 'on'
     action:
-      - service: notify.email_kanapka
+      - service: notify.email
         data:
           title: 'Musztarda'
           message: "Musztarda znajduje się w biurze"

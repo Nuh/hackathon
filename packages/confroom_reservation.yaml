@@ -1,0 +1,36 @@
+automation:
+  - alias: "15 min"
+    initial_state: 'on'
+    trigger:
+      - platform: state
+        entity_id: sensor.button_reservation
+        to: 'single'
+    action:
+      - service: notify.email
+        data:
+          title: 'Rezerwacja salki 1.11'
+          message: "Salka zarezerwowana na najbliższe 15 minut"
+
+  - alias: "30 min"
+    initial_state: 'on'
+    trigger:
+      - platform: state
+        entity_id: sensor.button_reservation
+        to: 'double'
+    action:
+      - service: notify.email
+        data:
+          title: 'Rezerwacja salki 1.11'
+          message: "Salka zarezerwowana na najbliższe 30 minut"
+
+  - alias: "60 min"
+    initial_state: 'on'
+    trigger:
+      - platform: state
+        entity_id: sensor.button_reservation
+        to: 'long'
+    action:
+      - service: notify.email
+        data:
+          title: 'Rezerwacja salki 1.11'
+          message: "Salka zarezerwowana na najbliższe 60 minut"

@@ -46,3 +46,29 @@ views:
     cards:
       - type: picture
         image: /local/img/tu_kuba.jpg
+      - type: custom:mini-graph-card
+  - title: Salka1
+    cards:
+      - type: custom:mini-graph-card
+        entities:
+         - sensor.illumination
+      - type: custom:layout-card
+        layout: vertical
+        # column_num: 2
+        cards:
+          - type: picture-glance
+            state_image:
+              "on": /local/img/office_on.jpg
+              "off": /local/img/office_off.jpg
+            title: Salon
+            entities:
+              - binary_sensor.salka1_door
+              - binary_sensor.salka1_motion
+              - binary_sensor.salka1_window
+      - type: entities
+        title: Salka1
+        show_header_toggle: true
+        entities:
+          - entity: alarm_control_panel.alarm
+            name: Alarm Panel
+          - device_tracker.demo_paulus

@@ -1,0 +1,10 @@
+automation:
+  trigger:
+    platform: time_pattern
+    hours: '1'
+    minutes: '*'
+  action:
+    service: python_script.get_menu
+    data:
+      name: "lunch.w-przerwie"
+      url: "https://www.facebook.com/CaffeBar-W-przerwie-1054077651328337/posts"

@@ -21,6 +21,8 @@ sun:
 conversation:
 map:
 
+system_health:
+  
 logger:
   default: info
   logs:

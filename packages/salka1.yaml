@@ -20,14 +20,14 @@ script:
       - wait_template: "{{ is_state('binary_sensor.salka1_motion', 'off') }}"
         timeout: '00:00:30'
         continue_on_timeout: 'true'
-      - condition: and
-        conditions:
-          - condition: state
-            entity_id: binary_sensor.salka1_door
-            state: 'off'
-          - condition: state
-            entity_id: binary_sensor.salka1_motion
-            state: 'off'
+      # - condition: and
+      #   conditions:
+      #     - condition: state
+      #       entity_id: binary_sensor.salka1_door
+      #       state: 'off'
+      #     - condition: state
+      #       entity_id: binary_sensor.salka1_motion
+      #       state: 'off'
       - service: input_boolean.turn_off
         entity_id: input_boolean.salka1_status
       - service: notify.email_send
@@ -35,6 +35,13 @@ script:
           title: 'Rezerwacja salki 1.11'
           message: "Rezerwacja Anulowana z powodu braku ruchu"
 automation:
+  # - alias: salka1_drzwi
+  #   trigger:
+  #     - platform: state
+  #       entity_id: input_boolean.salka1_status
+  #       to: 'on'
+  #       for:
+  #         minutes: 5
   - alias: salka1_meeting_start
     trigger:
       - platform: state

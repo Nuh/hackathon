@@ -27,7 +27,7 @@ script:
     sequence:
       - service: input_boolean.turn_off
         entity_id: input_boolean.salka1_door
-      - wait_template: "{{ is_state('binary_sensor.salka1_door', 'off') }}"
+      - wait_template: "{{ is_state('binary_sensor.salka1_door', 'on') }}"
         continue_on_timeout: 'false'
         timeout: '00:00:30'
       - service: input_boolean.turn_on
@@ -36,7 +36,7 @@ script:
     sequence:
       - service: input_boolean.turn_off
         entity_id: input_boolean.salka1_motion
-      - wait_template: "{{ is_state('binary_sensor.salka1_motion', 'off') }}"
+      - wait_template: "{{ is_state('binary_sensor.salka1_motion', 'on') }}"
         continue_on_timeout: 'false'
         timeout: '00:00:30'
       - service: input_boolean.turn_on

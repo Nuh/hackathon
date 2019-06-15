@@ -14,11 +14,11 @@ script:
           message: "W salce 1 zostalo otwarte okno {{states.binary_sensor.salka1_window.name}}"
   salka1:
     sequence:
-      - wait_template: "{{ is_state('binary_sensor.salka1_door', 'on') }}"
+      - wait_template: "{{ is_state('binary_sensor.salka1_door', 'off') }}"
         timeout: '00:00:30'
         name: Door
         continue_on_timeout: 'true'
-      - wait_template: "{{ is_state('binary_sensor.salka1_motion', 'on') }}"
+      - wait_template: "{{ is_state('binary_sensor.salka1_motion', 'off') }}"
         name: Motion
         timeout: '00:00:30'
         continue_on_timeout: 'true'

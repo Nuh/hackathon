@@ -7,9 +7,6 @@ input_boolean:
   salka1_status:
     name: Salka 1 Status
     initial: off
-  salka1_door:
-    name: Salka1 Door Changed
-    initial: off
   salka1_motion:
     name: Salka1 Motion Changed
     initial: off
@@ -25,13 +22,9 @@ script:
           message: "W salce 1 zostalo otwarte okno {{states.binary_sensor.salka1_window.name}}"
   salka1_door:
     sequence:
-      - service: input_boolean.turn_off
-        entity_id: input_boolean.salka1_door
       - wait_template: "{{ is_state('binary_sensor.salka1_door', 'on') }}"
         continue_on_timeout: 'false'
         timeout: '00:00:30'
-      - service: input_boolean.turn_on
-        entity_id: input_boolean.salka1_door
   salka1_motion:
     sequence:
       - service: input_boolean.turn_off
@@ -43,14 +36,9 @@ script:
         entity_id: input_boolean.salka1_motion
   salka1_cancel:
     sequence:
-      - condition: or
-        conditions:
-          - condition: state
-            entity_id: input_boolean.salka1_door
-            state: 'on'
-          - condition: state
-            entity_id: input_boolean.salka1_motion
-            state: 'on'
+      - condition: state
+        entity_id: input_boolean.salka1_motion
+        state: 'on'
       - service: input_boolean.turn_off
         entity_id: input_boolean.salka1_status
       - service: notify.email_send

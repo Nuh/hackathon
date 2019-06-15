@@ -1,0 +1,28 @@
+script:
+    salka1:
+      sequence:
+        - alias: timestart
+          service: timer.start
+          entity_id: timer.salka1_drzwi
+        - alias: wait door
+          wait_template: "{{ is_state('binary_sensor.salka1_door', 'on') or is_state('timer.salka1_drzwi', 'idle') }}"
+        - alias: timestart
+          service: timer.start
+          entity_id: timer.salka1_ruch
+        - alias: wait door
+          wait_template: "{{ is_state('binary_sensor.salka1_motion', 'on') or is_state('timer.salka1_drzwi', 'idle') }}"
+          # continue_on_timeout: 'true'
+        - condition: and
+          conditions:
+            - condition: state
+              entity_id: binary_sensor.salka1_door
+              state: 'off'
+            - condition: state
+              entity_id: binary_sensor.salka1_motion
+              state: 'off'
+        - service: input_boolean.turn_off
+          entity_id: input_boolean.salka1_status
+        - service: notify.email_send
+          data:
+            title: 'Rezerwacja salki 1.11'
+            message: "Rezerwacja Anulowana z powodu braku ruchu"

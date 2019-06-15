@@ -15,10 +15,10 @@ script:
   salka1:
     sequence:
       - wait_template: "{{ is_state('binary_sensor.salka1_door', 'on') }}"
-        timeout: '00:05:00'
+        timeout: '00:00:30'
         continue_on_timeout: 'false'
       - wait_template: "{{ is_state('binary_sensor.salka1_motion', 'on') }}"
-        timeout: '00:02:00'
+        timeout: '00:00:30'
         continue_on_timeout: 'false'
       - service: input_boolean.turn_off
         entity_id: input_boolean.salka1_status

@@ -2,7 +2,7 @@ automation:
   - alias: salka1_cancel_motion
     trigger:
       - platform: state
-        entity_id: binary_sensor.salka1_ruch
+        entity_id: binary_sensor.salka1_motion
         to: 'off'
     condition:
       condition: state

@@ -1,5 +1,5 @@
 notify:
-  - name: email_send
+  - name: email_production_lunch
     platform: smtp
     server: smtp.gmail.com
     port: 587

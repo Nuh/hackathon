@@ -19,9 +19,11 @@ script:
           message: "W salce 1 zostalo otwarte okno {{states.binary_sensor.salka1_window.name}}"
   salka1:
     sequence:
-      - service: timer.start
+      - alias: timestart
+        service: timer.start
         entity_id: timer.salka1_drzwi
-      - wait_template: "{{ is_state('binary_sensor.salka1_door', 'on') or is_state('timer.salka1_drzwi', 'idle') }}"
+      - alias: wait door
+        wait_template: "{{ is_state('binary_sensor.salka1_door', 'off') or is_state('timer.salka1_drzwi', 'idle') }}"
         # continue_on_timeout: 'true'
       # - condition: and
       #   conditions:

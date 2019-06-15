@@ -12,7 +12,7 @@ automation:
           message: "Szop znajduje się przed biurem"
           data:
             images:
-              - /config/www/img/szop.jpg
+              - /config/www/img/shop.jpg
   - alias: "Kanapka Kuba"
     initial_state: 'on'
     trigger:
@@ -26,7 +26,7 @@ automation:
           message: "TuKuba znajduje się przed biurem"
           data:
             images:
-              - /config/www/img/kuba.jpg
+              - /config/www/img/tu_kuba.jpg
   - alias: "Kanapka Musztarda"
     initial_state: 'on'
     trigger:

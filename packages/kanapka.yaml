@@ -40,7 +40,7 @@ automation:
           message: "Musztarda znajduje się w biurze"
           data:
             images:
-              - /config/www/img/musztarda.jpg
+              - /config/www/img/musztarda.png
 
   - alias: "BLE KANAPKA"
     initial_state: 'on'
@@ -55,4 +55,4 @@ automation:
           message: "BLE - usztarda znajduje się w biurze"
           data:
             images:
-              - /config/www/img/musztarda.jpg
+              - /config/www/img/musztarda.png

@@ -4,7 +4,6 @@ sensor:
     #curl -X GET     --header 'Accept: application/json'  http://api.gios.gov.pl/pjp-api/rest/station/sensors/295
     resource:  http://api.gios.gov.pl/pjp-api/rest/data/getData/2069
     value_template: "{{ value_json['values'][1]['value'] }}"
-    icon_template: mdi:jquery
     unit_of_measurement: "μg/m3"
 input_number:
   air_red:

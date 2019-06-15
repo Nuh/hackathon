@@ -7,11 +7,9 @@ input_boolean:
   salka1_status:
     name: Salka 1 Status
     initial: off
-input_boolean:
   salka1_door:
     name: Salka1 Door Changed
     initial: off
-input_boolean:
   salka1_motion:
     name: Salka1 Motion Changed
     initial: off

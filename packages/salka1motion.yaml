@@ -1,0 +1,17 @@
+automation:
+  - alias: salka1_cancel_motion
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.salka1_ruch
+        to: 'off'
+    condition:
+      condition: state
+      entity_id: input_boolean.salka1_status
+      state: 'on'
+    action:
+      - service: input_boolean.turn_off
+        entity_id: input_boolean.salka1_status
+      - service: notify.email_send
+        data:
+          title: 'Rezerwacja salki 1.11'
+          message: "Rezerwacja Anulowana z powodu braku ruchu"

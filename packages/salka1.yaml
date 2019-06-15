@@ -1,3 +1,8 @@
+timer:
+  salka1_drzwi:
+    duration: '00:01:00'
+  salka1_motion:
+    duration: '00:01:00'
 input_boolean:
   salka1_status:
     name: Salka 1 Status
@@ -14,11 +19,9 @@ script:
           message: "W salce 1 zostalo otwarte okno {{states.binary_sensor.salka1_window.name}}"
   salka1:
     sequence:
-      - wait_template: "{{ is_state('binary_sensor.salka1_door', 'off') }}"
-        timeout: '00:00:30'
-        # continue_on_timeout: 'true'
-      - wait_template: "{{ is_state('binary_sensor.salka1_motion', 'off') }}"
-        timeout: '00:00:30'
+      - service: timer.start
+        entity_id: timer.salka1_drzwi
+      - wait_template: "{{ is_state('binary_sensor.salka1_door', 'on') or is_state('timer.salka1_drzwi', 'idle') }}"
         # continue_on_timeout: 'true'
       # - condition: and
       #   conditions:

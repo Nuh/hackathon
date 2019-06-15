@@ -1,3 +1,7 @@
+input_boolean:
+  salka1_status:
+    name: Salka 1 Status
+    initial: off
 script:
   salka1:
     sequence:
@@ -8,7 +12,7 @@ script:
         timeout: '00:02:00'
         continue_on_timeout: 'false'
       - service: input_boolean.turn_off
-        entity_id: input_boolean.salka_1_status
+        entity_id: input_boolean.salka1_status
       - service: notify.email_send
         data:
           title: 'Rezerwacja salki 1.11'
@@ -17,7 +21,7 @@ automation:
   - alias: salka1_meeting_start
     trigger:
       - platform: state
-        entity_id: input_boolean.salka_1_status
+        entity_id: input_boolean.salka1_status
         to: 'on'
     action:
       - service: script.turn_on
@@ -34,4 +38,4 @@ automation:
       - service: notify.email_send
         data:
           title: 'Zamknij okno'
-          message: "W salce 1 zostalo otwarte okno!"
+          message: "W salce 1 zostalo twarte okno!"

@@ -12,7 +12,7 @@ automation:
           message: "Salka zarezerwowana na najbliższe 15 minut"
       - service: input_boolean.turn_on
         data:
-          entity_id: input_boolean.salka_1_status
+          entity_id: input_boolean.salka1_status
   - alias: "salka1_30min"
     initial_state: 'on'
     trigger:
@@ -26,7 +26,7 @@ automation:
           message: "Salka zarezerwowana na najbliższe 30 minut"
       - service: input_boolean.turn_on
         data:
-          entity_id: input_boolean.salka_1_status
+          entity_id: input_boolean.salka1_status
   - alias: "salka1_60min"
     initial_state: 'on'
     trigger:
@@ -40,4 +40,4 @@ automation:
           message: "Salka zarezerwowana na najbliższe 60 minut"
       - service: input_boolean.turn_on
         data:
-          entity_id: input_boolean.salka_1_status
+          entity_id: input_boolean.salka1_status

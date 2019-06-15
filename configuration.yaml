@@ -15,14 +15,14 @@ lovelace:
 
 config:
 hassio:
-python_script:
+
 
 sun:
 conversation:
 map:
 
 system_health:
-  
+
 logger:
   default: info
   logs:

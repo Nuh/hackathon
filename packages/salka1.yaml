@@ -38,7 +38,7 @@ script:
     sequence:
       - condition: state
         entity_id: input_boolean.salka1_motion
-        state: 'on'
+        state: 'off'
       - service: input_boolean.turn_off
         entity_id: input_boolean.salka1_status
       - service: notify.email_send

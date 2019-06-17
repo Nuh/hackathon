@@ -4,7 +4,7 @@ automation:
     trigger:
       platform: time_pattern
       hours: '11'
-      minutes: '10'
+      minutes: '30'
     action:
       service: lunch.get_menu
       data:
@@ -16,7 +16,7 @@ automation:
     trigger:
       platform: time_pattern
       hours: '11'
-      minutes: '10'
+      minutes: '30'
     action:
       service: lunch.get_menu
       data:
@@ -28,7 +28,7 @@ automation:
     trigger:
       platform: time_pattern
       hours: '11'
-      minutes: '10'
+      minutes: '30'
     action:
       service: lunch.get_menu
       data:
@@ -40,7 +40,7 @@ automation:
     trigger:
       platform: time_pattern
       hours: '11'
-      minutes: '10'
+      minutes: '30'
     action:
       service: lunch.get_menu
       data:
@@ -52,7 +52,7 @@ automation:
     trigger:
       platform: time_pattern
       hours: '11'
-      minutes: '10'
+      minutes: '30'
     action:
       service: lunch.get_menu
       data:
@@ -65,7 +65,7 @@ automation:
     trigger:
       platform: time_pattern
       hours: '11'
-      minutes: '10'
+      minutes: '30'
     action:
       service: lunch.get_menu
       data:
@@ -77,7 +77,7 @@ automation:
     trigger:
       platform: time_pattern
       hours: '11'
-      minutes: '10'
+      minutes: '30'
     action:
       service: lunch.get_menu
       data:

@@ -83,3 +83,15 @@ automation:
       data:
         name: "lunch.ahe"
         url: "https://www.facebook.com/Kuchniadomowaanozwidelec/posts"
+
+  - alias: "Lunch: MammyFoodLodz"
+    initial_state: 'on'
+    trigger:
+      platform: time_pattern
+      hours: '11'
+      minutes: '30'
+    action:
+      service: lunch.get_menu
+      data:
+        name: "lunch.ahe"
+        url: "https://www.facebook.com/MammyFoodLodz/posts"

@@ -11,7 +11,6 @@ automation:
         message: |
           Post z: {{ trigger.event.data.timestamp }}
           {{ trigger.event.data.message }}
-          Smacznego życzy The Second Salamander
         data:
           images:
             - /config/www/img/lunch.piwnica.1.jpg
@@ -28,7 +27,6 @@ automation:
         message: |
           Post z: {{ trigger.event.data.timestamp }}
           {{ trigger.event.data.message }}
-          Smacznego życzy The Second Salamander
         data:
           images:
             - /config/www/img/lunch.w_przerwie.1.jpg
@@ -45,7 +43,6 @@ automation:
         message: |
           Post z: {{ trigger.event.data.timestamp }}
           {{ trigger.event.data.message }}
-          Smacznego życzy The Second Salamander
         data:
           images:
             - /config/www/img/lunch.solo.1.jpg
@@ -62,7 +59,6 @@ automation:
         message: |
           Post z: {{ trigger.event.data.timestamp }}
           {{ trigger.event.data.message }}
-          Smacznego życzy The Second Salamander
         data:
           images:
             - /config/www/img/lunch.mauroski.1.jpg
@@ -79,21 +75,6 @@ automation:
         message: |
           Post z: {{ trigger.event.data.timestamp }}
           {{ trigger.event.data.message }}
-          Smacznego życzy The Second Salamander
-
-  - alias: "Send Da Antonio menu"
-    initial_state: 'on'
-    trigger:
-      platform: event
-      event_type: lunch.antonio
-    action:
-      service: notify.email_production_lunch
-      data_template:
-        title: "{{ trigger.event.data.title }}"
-        message: |
-          Post z: {{ trigger.event.data.timestamp }}
-          {{ trigger.event.data.message }}
-          Smacznego życzy The Second Salamander
 
   - alias: "Send AHE menu"
     initial_state: 'on'
